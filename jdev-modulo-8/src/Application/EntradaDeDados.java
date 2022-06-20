@@ -22,7 +22,23 @@ public class EntradaDeDados {
 		
 		double resto = carroNumero % pessoaNumero;
 		
-		JOptionPane.showMessageDialog(null, "Divisão para pessoas deu " + divisao + " carros" + " e sobraram " + resto + " carros");
+//		Criando a opçao de confirmacao caso a deseje ver o resultado da divisao
+		int respostaVerDivisao = JOptionPane.showConfirmDialog(null, "Deseja ver o resultado da divisão?");
+		
+		if(respostaVerDivisao == 0) {
+			
+			JOptionPane.showMessageDialog(null, "Divisão para pessoas deu " + divisao + " carros");
+		}
+		
+//		Criando segunda caixa de confirmacao caso queira ver o RESTO da divisão
+		respostaVerDivisao = JOptionPane.showConfirmDialog(null, "Deseja ver o RESTO da divisão?");
+		
+		if(respostaVerDivisao == 0) {
+			JOptionPane.showMessageDialog(null, "O RESTO da divisão é " + resto);
+		}else {
+			JOptionPane.showMessageDialog(null, "Você não quis ver o RESTO da divisão.");
+		}
+		
 		
 	}
 
