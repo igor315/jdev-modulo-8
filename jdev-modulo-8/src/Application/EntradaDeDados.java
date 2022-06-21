@@ -1,45 +1,39 @@
 package Application;
+
 /**
  * Os exemplos aqui estão como nas aulas do curso jdev treinamentos.
  */
-
 
 import javax.swing.JOptionPane;
 
 public class EntradaDeDados {
 
 	public static void main(String[] args) {
-		
-//		Entrada de dados com JOptionPane
-		String carros = JOptionPane.showInputDialog("Informe a quantidade de carros");
-		String pessoas = JOptionPane.showInputDialog("Informe a quantidade de pessoas");
 
-//		Agora precisamos converter em números esses dados para processa-los
-		double carroNumero = Double.parseDouble(carros);
-		double pessoaNumero = Double.parseDouble(pessoas);
-		
-		int divisao = (int) (carroNumero / pessoaNumero);
-		
-		double resto = carroNumero % pessoaNumero;
-		
-//		Criando a opçao de confirmacao caso a deseje ver o resultado da divisao
-		int respostaVerDivisao = JOptionPane.showConfirmDialog(null, "Deseja ver o resultado da divisão?");
-		
-		if(respostaVerDivisao == 0) {
-			
-			JOptionPane.showMessageDialog(null, "Divisão para pessoas deu " + divisao + " carros");
+		String nota1 = JOptionPane.showInputDialog("Informe a nota 1 ");
+		String nota2 = JOptionPane.showInputDialog("Informe a nota 2 ");
+		String nota3 = JOptionPane.showInputDialog("Informe a nota 3 ");
+		String nota4 = JOptionPane.showInputDialog("Informe a nota 4 ");
+
+		double dNota1 = Double.parseDouble(nota1);
+		double dNota2 = Double.parseDouble(nota2);
+		double dNota3 = Double.parseDouble(nota3);
+		double dNota4 = Double.parseDouble(nota4);
+
+		double media = (dNota1 + dNota2 + dNota3 + dNota4) / 4;
+
+//		Média para aprovação é 70
+		if (media >= 50) {
+
+			if (media >= 70) {
+				JOptionPane.showMessageDialog(null, "Aluno está aprovado com média de: " + media);
+			} else
+				JOptionPane.showMessageDialog(null, "Aluno em recuperação com média de: " + media);
+		} else {
+
+			JOptionPane.showMessageDialog(null, "Aluno está reprovado com média de: " + media);
 		}
-		
-//		Criando segunda caixa de confirmacao caso queira ver o RESTO da divisão
-		respostaVerDivisao = JOptionPane.showConfirmDialog(null, "Deseja ver o RESTO da divisão?");
-		
-		if(respostaVerDivisao == 0) {
-			JOptionPane.showMessageDialog(null, "O RESTO da divisão é " + resto);
-		}else {
-			JOptionPane.showMessageDialog(null, "Você não quis ver o RESTO da divisão.");
-		}
-		
 		
 	}
-
+	
 }
